@@ -17,10 +17,10 @@ app.use(morgan("dev"));
 
 app.use("/api/v1", router);
 app.use("/api/v1", blogrouter);
-// app.use(express.static(path.join(__dirname, "./blog/build")));
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./blog/build/index.html"));
-// });
+app.use(express.static(path.join(__dirname, "./blog/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./blog/build/index.html"));
+});
 app.get("/", (req, res) => {
   res.send("hi");
 });
