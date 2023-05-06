@@ -7,6 +7,7 @@ import morgan from "morgan";
 import blogrouter from "./routes/blogroute.js";
 import router from "./routes/userroutes.js";
 import path from "path";
+const __dirname = path.resolve();
 dotenv.config();
 connect();
 const port = process.env.PORT || 7000;
